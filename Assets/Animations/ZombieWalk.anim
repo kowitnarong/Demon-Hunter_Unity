@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Enemy1Idle
+  m_Name: ZombieWalk
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,9 +20,9 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -8968464996740956090, guid: 04e786b252354984e88e56bc8a33a09d, type: 3}
+      value: {fileID: -3418017811258667477, guid: 2718c109c24b62b41967594ea947fcb0, type: 3}
     - time: 0.1
-      value: {fileID: -1153848266427850650, guid: 04e786b252354984e88e56bc8a33a09d, type: 3}
+      value: {fileID: -9202475299933292329, guid: 2718c109c24b62b41967594ea947fcb0, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -42,8 +42,8 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -8968464996740956090, guid: 04e786b252354984e88e56bc8a33a09d, type: 3}
-    - {fileID: -1153848266427850650, guid: 04e786b252354984e88e56bc8a33a09d, type: 3}
+    - {fileID: -3418017811258667477, guid: 2718c109c24b62b41967594ea947fcb0, type: 3}
+    - {fileID: -9202475299933292329, guid: 2718c109c24b62b41967594ea947fcb0, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

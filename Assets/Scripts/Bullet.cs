@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 15.0f;
+    public float speed = 20.0f;
     public Rigidbody2D rb;
 
     static public int bulletDamage = 1;
+    static public string gunMode = "normal";
+    static public string curItem = "normal";
 
     Vector2 movementLeftUp;
     Vector2 movementRightUp;
