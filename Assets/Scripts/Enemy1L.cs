@@ -8,7 +8,12 @@ public class Enemy1L : MonoBehaviour
     public GameObject ZombieDied;
     private float speed = 2.0f;
     private float FirstMove;
-    private int EnemyHp = 1;
+    public int EnemyHp = 1;
+
+    int RandomItemGunX3;
+    public GameObject ItemGunX3Drop;
+    int RandomItemGunRate;
+    public GameObject ItemGunRateDrop;
 
     Vector3 MoveX = new Vector3(0.005f, 0, 0);
 
@@ -40,6 +45,31 @@ public class Enemy1L : MonoBehaviour
         if (EnemyHp <= 0)
         {
             Instantiate(ZombieDied, transform.position, transform.rotation);
+            RandomItemGunX3 = Random.Range(0, 100);
+            RandomItemGunRate = Random.Range(0, 100);
+            for (int i = 0; i < 10; i++)
+            {
+                if (RandomItemGunX3 == i)
+                {
+                    if (ItemGunX3.ItemGunX3Count < 4)
+                    {
+                        Instantiate(ItemGunX3Drop, transform.position, transform.rotation);
+                        ItemGunX3.ItemGunX3Count += 1;
+                    }
+                    RandomItemGunX3 = 99;
+                    break;
+                }
+                if (RandomItemGunRate == i)
+                {
+                    if (ItemGunRate.ItemGunRateCount < 4)
+                    {
+                        Instantiate(ItemGunRateDrop, transform.position, transform.rotation);
+                        ItemGunRate.ItemGunRateCount += 1;
+                    }
+                    RandomItemGunRate = 99;
+                    break;
+                }
+            }
             Destroy(gameObject);
         }
     }
@@ -96,4 +126,5 @@ public class Enemy1L : MonoBehaviour
             speed = 2.0f;
         }
     }
+
 }

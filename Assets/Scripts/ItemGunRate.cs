@@ -7,6 +7,7 @@ public class ItemGunRate : MonoBehaviour
     public GameObject itemGunRate;
     public Transform CurItemPoint;
     public GameObject Icon;
+    static public int ItemGunRateCount = 0;
     void Update()
     {
         if (Input.GetButton("UseItem") && Bullet.curItem == "RateX2")

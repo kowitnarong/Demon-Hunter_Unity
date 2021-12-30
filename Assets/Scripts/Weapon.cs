@@ -6,7 +6,7 @@ public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
     public float fireRate = 0.5f;
-    private float nextFire = 0.0F;
+    private float nextFire = 0.0f;
     public GameObject bulletPrefab;
     public GameObject bulletXL;
     public GameObject bulletXM;

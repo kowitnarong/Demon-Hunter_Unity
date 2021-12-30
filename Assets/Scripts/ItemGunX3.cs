@@ -7,6 +7,7 @@ public class ItemGunX3 : MonoBehaviour
     public GameObject itemGunX3;
     public Transform CurItemPoint;
     public GameObject Icon;
+    static public int ItemGunX3Count = 0;
     void Update()
     {
         if (Input.GetButton("UseItem") && Bullet.curItem == "X3")

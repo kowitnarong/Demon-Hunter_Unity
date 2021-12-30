@@ -24,25 +24,25 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Input.GetButton("NormalFireLeft") && Input.GetButton("NormalFireUp"))
+        if (Input.GetButton("NormalFireLeft") && Input.GetButton("NormalFireUp") && gunMode == "normal")
         {
             movementLeftUp.x = -1;
             movementLeftUp.y = 1;
             shootLeftUp = true;
         }
-        else if (Input.GetButton("NormalFireRight") && Input.GetButton("NormalFireUp"))
+        else if (Input.GetButton("NormalFireRight") && Input.GetButton("NormalFireUp") && gunMode == "normal")
         {
             movementRightUp.x = 1;
             movementRightUp.y = 1;
             shootRightUp = true;
         }
-        else if (Input.GetButton("NormalFireLeft") && Input.GetButton("NormalFireDown"))
+        else if (Input.GetButton("NormalFireLeft") && Input.GetButton("NormalFireDown") && gunMode == "normal")
         {
             movementLeftDown.x = -1;
             movementLeftDown.y = -1;
             shootLeftDown = true;
         }
-        else if (Input.GetButton("NormalFireRight") && Input.GetButton("NormalFireDown"))
+        else if (Input.GetButton("NormalFireRight") && Input.GetButton("NormalFireDown") && gunMode == "normal")
         {
             movementRightDown.x = 1;
             movementRightDown.y = -1;

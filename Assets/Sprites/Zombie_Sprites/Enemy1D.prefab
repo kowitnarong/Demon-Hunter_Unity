@@ -144,6 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ZombieDied: {fileID: 9010555848138532888, guid: 29813e2a87a5efc4aa4c965ee60dd9af, type: 3}
+  EnemyHp: 1
+  ItemGunX3Drop: {fileID: 6105974719032253800, guid: 33d19746f53b3044c9a4cdf1ea739503, type: 3}
+  ItemGunRateDrop: {fileID: 3810484021316313290, guid: bc69f659315174a4f8f1ae36785a9fab, type: 3}
 --- !u!50 &-6518719311517075447
 Rigidbody2D:
   serializedVersion: 4
