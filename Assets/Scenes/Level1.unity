@@ -5604,6 +5604,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3144403844686026216, guid: bf7e1bef4e2132043bbf2a9da3dd0124, type: 3}
     - target: {fileID: 7220553937713354538, guid: ba29929e01bc40c4fae6d546aed870b5, type: 3}
+      propertyPath: fireRate
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220553937713354538, guid: ba29929e01bc40c4fae6d546aed870b5, type: 3}
       propertyPath: ZombieDown
       value: 
       objectReference: {fileID: 6095859253493393974, guid: 332a36a0860b51f4db90b7a2a9a2865f, type: 3}
@@ -5615,6 +5619,10 @@ PrefabInstance:
       propertyPath: ZombieRight
       value: 
       objectReference: {fileID: 492559358362953647, guid: 24c7e1f9df6191f45b06cdcc882c9a52, type: 3}
+    - target: {fileID: 7220553937713354540, guid: ba29929e01bc40c4fae6d546aed870b5, type: 3}
+      propertyPath: fireRate
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 7220553937713354541, guid: ba29929e01bc40c4fae6d546aed870b5, type: 3}
       propertyPath: m_IsTrigger
       value: 0
