@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
-    public float fireRate = 0.5f;
+    public float fireRate = 1.0f;
     private float nextFire = 0.0f;
     public GameObject bulletPrefab;
     public GameObject bulletXL;
@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour
         {
             Bullet.curItem = "normal";
             Bullet.gunMode = "normal";
-            fireRate = 0.5f;
+            fireRate = fireRate * 2;
             useItem = false;
         }
 

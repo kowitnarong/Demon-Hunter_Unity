@@ -51,7 +51,7 @@ public class Enemy1L : MonoBehaviour
             {
                 if (RandomItemGunX3 == i)
                 {
-                    if (ItemGunX3.ItemGunX3Count < 4)
+                    if (ItemGunX3.ItemGunX3Count < 2)
                     {
                         Instantiate(ItemGunX3Drop, transform.position, transform.rotation);
                         ItemGunX3.ItemGunX3Count += 1;
@@ -61,7 +61,7 @@ public class Enemy1L : MonoBehaviour
                 }
                 if (RandomItemGunRate == i)
                 {
-                    if (ItemGunRate.ItemGunRateCount < 4)
+                    if (ItemGunRate.ItemGunRateCount < 2)
                     {
                         Instantiate(ItemGunRateDrop, transform.position, transform.rotation);
                         ItemGunRate.ItemGunRateCount += 1;
@@ -82,49 +82,5 @@ public class Enemy1L : MonoBehaviour
             EnemyHp = EnemyHp - Bullet.bulletDamage;
             Destroy(hitInfo.gameObject);
         }
-
-        if (hitInfo.gameObject.name == "Enemy1D(Clone)" || hitInfo.gameObject.name == "Enemy1U(Clone)"
-            || hitInfo.gameObject.name == "Enemy1L(Clone)" || hitInfo.gameObject.name == "Enemy1R(Clone)")
-        {
-            speed = 0;
-        }
     }
-
-    void OnTriggerStay2D(Collider2D hitInfo)
-    {
-        if (hitInfo.gameObject.name == "Enemy1D(Clone)"
-            || hitInfo.gameObject.name == "Enemy1U(Clone)"
-            || hitInfo.gameObject.name == "Enemy1L(Clone)"
-            || hitInfo.gameObject.name == "Enemy1R(Clone)")
-        {
-            ZombieStack = true;
-            speed = -2.0f;
-            transform.position = Vector2.MoveTowards(transform.position, hitInfo.transform.position, speed * Time.deltaTime);
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D hitInfo)
-    {
-        if (hitInfo.gameObject.name == "Enemy1D(Clone)")
-        {
-            ZombieStack = false;
-            speed = 2.0f;
-        }
-        else if (hitInfo.gameObject.name == "Enemy1U(Clone)")
-        {
-            ZombieStack = false;
-            speed = 2.0f;
-        }
-        else if (hitInfo.gameObject.name == "Enemy1L(Clone)")
-        {
-            ZombieStack = false;
-            speed = 2.0f;
-        }
-        else if (hitInfo.gameObject.name == "Enemy1R(Clone)")
-        {
-            ZombieStack = false;
-            speed = 2.0f;
-        }
-    }
-
 }

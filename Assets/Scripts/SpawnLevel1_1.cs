@@ -50,22 +50,22 @@ public class SpawnLevel1_1 : MonoBehaviour
     }
     void Update()
     {
-        if (Spawn1L + 1.0f < Time.time)
+        if (Spawn1L + 0.0f < Time.time)
         {
             Instantiate(Enemy1PrefabL, EnemySpawnL2.position, EnemySpawnL2.rotation);
             Spawn1L = Time.time + 10.0f;
         }
-        if (Spawn1U + 2.0f < Time.time)
+        if (Spawn1U + 1.0f < Time.time)
         {
             Instantiate(Enemy1PrefabU, EnemySpawnU2.position, EnemySpawnU2.rotation);
             Spawn1U = Time.time + 10.0f;
         }
-        if (Spawn1R + 3.0f < Time.time)
+        if (Spawn1R + 2.0f < Time.time)
         {
             Instantiate(Enemy1PrefabR, EnemySpawnR2.position, EnemySpawnR2.rotation);
             Spawn1R = Time.time + 10.0f;
         }
-        if (Spawn1D + 4.0f < Time.time)
+        if (Spawn1D + 3.0f < Time.time)
         {
             Instantiate(Enemy1PrefabD, EnemySpawnD2.position, EnemySpawnD2.rotation);
             Spawn1L = Time.time + SwitchTime1;

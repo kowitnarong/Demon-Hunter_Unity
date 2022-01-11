@@ -85,11 +85,26 @@ public class Bullet : MonoBehaviour
             rb.MovePosition(rb.position + movementRightDown * 12.0f * Time.fixedDeltaTime);
         }
     }
-
-    void OnTriggerExit2D(Collider2D hitInfo)
+    void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("collision name = " + hitInfo.gameObject.name);
         if (hitInfo.gameObject.name == "Tilemap_SolidBlock")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (1)")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (2)")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (3)")
         {
             Destroy(gameObject);
         }

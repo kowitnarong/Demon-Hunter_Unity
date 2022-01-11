@@ -19,14 +19,11 @@ public class PlayerMovement : MonoBehaviour
 
     Vector2 FireDirection;
 
-    Vector3 collisionScreenX = new Vector3(0.1f, 0, 0);
-    Vector3 collisionScreenY = new Vector3(0.0f, 0.1f, 0);
-
     private bool fireOn;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -76,29 +73,13 @@ public class PlayerMovement : MonoBehaviour
             fireOn = false;
         }
 
-        if (transform.position.x > 7.5)
-        {
-            transform.position -= collisionScreenX;
-        }
-        if (transform.position.x < -6.5)
-        {
-            transform.position += collisionScreenX;
-        }
-        if (transform.position.y > 6.5)
-        {
-            transform.position -= collisionScreenY;
-        }
-        if (transform.position.y < -6.5)
-        {
-            transform.position += collisionScreenY;
-        }
     }
     void FixedUpdate()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    void OnTriggerEnter2D(Collider2D hitInfo)
+    void OnCollisionEnter2D(Collision2D hitInfo)
     {
         Debug.Log("collision name = " + hitInfo.gameObject.name);
         if (hitInfo.gameObject.name == "Enemy1D(Clone)" || hitInfo.gameObject.name == "Enemy1U(Clone)"
