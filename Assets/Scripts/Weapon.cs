@@ -5,7 +5,8 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public Transform firePoint;
-    public float fireRate = 1.0f;
+    public float fireRate;
+    private float TempFireRate;
     private float nextFire = 0.0f;
     public GameObject bulletPrefab;
     public GameObject bulletXL;
@@ -21,6 +22,7 @@ public class Weapon : MonoBehaviour
     void Start()
     {
         ChangeItemTime = Time.time;
+        TempFireRate = fireRate;
     }
 
     // Update is called once per frame
@@ -48,7 +50,7 @@ public class Weapon : MonoBehaviour
         {
             Bullet.curItem = "normal";
             Bullet.gunMode = "normal";
-            fireRate = fireRate * 2;
+            fireRate = TempFireRate;
             useItem = false;
         }
 

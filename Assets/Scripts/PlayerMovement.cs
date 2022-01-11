@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator animator;
-    public float fireRate = 0.5f;
+    private float fireRate = 0.2f;
     private float nextFire = 0.0F;
 
     Vector2 movement;
