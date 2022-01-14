@@ -6,7 +6,7 @@ public class Enemy1R : MonoBehaviour
 {
     private GameObject Player;
     public GameObject ZombieDied;
-    private float speed = 2.0f;
+    private float speed = 1.5f;
     private float FirstMove;
     public int EnemyHp = 1;
 
@@ -31,7 +31,8 @@ public class Enemy1R : MonoBehaviour
     {
         if (Time.time < FirstMove + 2.5f)
         {
-            transform.position -= MoveX;
+            //transform.position -= MoveX;
+            transform.position += Vector3.left * speed * Time.deltaTime;
         }
         else if (Time.time > FirstMove + 2.5f)
         {
