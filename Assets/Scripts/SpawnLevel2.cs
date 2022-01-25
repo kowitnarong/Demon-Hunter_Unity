@@ -59,6 +59,10 @@ public class SpawnLevel2 : MonoBehaviour
         Spawn2U = Time.time;
         Spawn2R = Time.time;
         Spawn2D = Time.time;
+        Spawn3L = Time.time;
+        Spawn3R = Time.time;
+        Spawn4L = Time.time;
+        Spawn4R = Time.time;
     }
     void Update()
     {
@@ -132,6 +136,17 @@ public class SpawnLevel2 : MonoBehaviour
             Spawn3R = Time.time + SwitchTime3;
             Spawn4L = Time.time + SwitchTime3;
             Spawn4R = Time.time + SwitchTime3;
+        }
+        if (PlayerMovement.hpPlayer <= 0)
+        {
+            Spawn2L = Time.time;
+            Spawn2U = Time.time;
+            Spawn2R = Time.time;
+            Spawn2D = Time.time;
+            Spawn3L = Time.time;
+            Spawn3R = Time.time;
+            Spawn4L = Time.time;
+            Spawn4R = Time.time;
         }
     }
 }

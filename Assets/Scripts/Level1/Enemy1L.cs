@@ -55,7 +55,7 @@ public class Enemy1L : MonoBehaviour
             {
                 if (RandomItemGunX3 == i)
                 {
-                    if (ItemGunX3.ItemGunX3Count < 2)
+                    if (ItemGunX3.ItemGunX3Count < 4)
                     {
                         Instantiate(ItemGunX3Drop, transform.position, transform.rotation);
                         ItemGunX3.ItemGunX3Count += 1;
@@ -65,7 +65,7 @@ public class Enemy1L : MonoBehaviour
                 }
                 if (RandomItemGunRate == i)
                 {
-                    if (ItemGunRate.ItemGunRateCount < 2)
+                    if (ItemGunRate.ItemGunRateCount < 4)
                     {
                         Instantiate(ItemGunRateDrop, transform.position, transform.rotation);
                         ItemGunRate.ItemGunRateCount += 1;

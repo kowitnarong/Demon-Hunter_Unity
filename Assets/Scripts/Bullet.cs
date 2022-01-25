@@ -124,5 +124,21 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (hitInfo.gameObject.name == "Block (8)")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (9)")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (10)")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (11)")
+        {
+            Destroy(gameObject);
+        }
     }
 }

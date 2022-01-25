@@ -102,6 +102,10 @@ public class Weapon : MonoBehaviour
                 ShootX3();
             }
         }
+        if (PlayerMovement.hpPlayer <= 0)
+        {
+            ChangeItemTime = Time.time;
+        }
     }
 
     void Shoot()

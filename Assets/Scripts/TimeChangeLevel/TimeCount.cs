@@ -27,9 +27,11 @@ public class TimeCount : MonoBehaviour
         }
         else
         {
-
+            ItemGunX3.ItemGunX3Count = 0;
+            ItemGunRate.ItemGunRateCount = 0;
+            Bullet.gunMode = "normal";
+            Bullet.curItem = "normal";
             SceneManager.LoadScene(index);
-
             SceneManager.LoadScene(levelName);
             //Time.timeScale = 0;
         }

@@ -97,5 +97,13 @@ public class SpawnLevel1_1 : MonoBehaviour
             Spawn2U = Time.time + SwitchTime2;
             Spawn2D = Time.time + SwitchTime2;
         }
+
+        if (PlayerMovement.hpPlayer <= 0)
+        {
+            Spawn2L = Time.time;
+            Spawn2U = Time.time;
+            Spawn2R = Time.time;
+            Spawn2D = Time.time;
+        }
     }
 }

@@ -83,6 +83,10 @@ public class PlayerMovement : MonoBehaviour
         if (hpPlayer <= 0)
         {
             hpPlayer = 3;
+            ItemGunX3.ItemGunX3Count = 0;
+            ItemGunRate.ItemGunRateCount = 0;
+            Bullet.gunMode = "normal";
+            Bullet.curItem = "normal";
             SceneManager.LoadScene(index);
             SceneManager.LoadScene(LevelRestart);
         }
