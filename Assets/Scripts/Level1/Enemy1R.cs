@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1L : MonoBehaviour
+public class Enemy1R : MonoBehaviour
 {
     private GameObject Player;
     public GameObject ZombieDied;
     private float speed = 1.5f;
+    private float TempSpeed;
     private float FirstMove;
     public int EnemyHp = 1;
 
@@ -24,17 +25,16 @@ public class Enemy1L : MonoBehaviour
     {
         Player = GameObject.Find("Player");
         FirstMove = Time.time;
+        TempSpeed = speed;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         if (Time.time < FirstMove + 2.5f)
         {
-            //transform.position += MoveX;
-            //transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
-            transform.position += Vector3.right * speed * Time.deltaTime;
+            //transform.position -= MoveX;
+            transform.position += Vector3.left * speed * Time.deltaTime;
         }
         else if (Time.time > FirstMove + 2.5f)
         {
@@ -83,6 +83,18 @@ public class Enemy1L : MonoBehaviour
         {
             EnemyHp = EnemyHp - Bullet.bulletDamage;
             Destroy(hitInfo.gameObject);
+        }
+        if (hitInfo.gameObject.name == "Water")
+        {
+            speed = (float)(speed / 2.5);
+        }
+    }
+    void OnTriggerExit2D(Collider2D hitInfo)
+    {
+        Debug.Log("collision name = " + hitInfo.gameObject.name);
+        if (hitInfo.gameObject.name == "Water")
+        {
+            speed = TempSpeed;
         }
     }
 }

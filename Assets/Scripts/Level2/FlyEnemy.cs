@@ -2,49 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy1Down : MonoBehaviour
+public class FlyEnemy : MonoBehaviour
 {
     private GameObject Player;
-    public GameObject ZombieDied;
+    public GameObject EnemyDied;
     private float speed = 1.5f;
-    private float FirstMove;
-    public int EnemyHp = 1;
+    public int EnemyHp = 2;
+
+    private float delayHp;
 
     int RandomItemGunX3;
     public GameObject ItemGunX3Drop;
     int RandomItemGunRate;
     public GameObject ItemGunRateDrop;
 
-    Vector3 MoveY = new Vector3(0.0f, 0.005f, 0);
-
-    private bool ZombieStack = false;
+    //private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         Player = GameObject.Find("Player");
-        FirstMove = Time.time;
+        delayHp = Time.time;
+        //rb = this.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.time < FirstMove + 2.5f)
+        transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+        if (Vector3.Distance(transform.position, Player.transform.position) > 1f)
         {
-            //transform.position += MoveY;
-            transform.position += Vector3.up * speed * Time.deltaTime;
-        }
-        else if (Time.time > FirstMove + 2.5f)
-        {
-            if (!ZombieStack)
-            {
-                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
-            }
+            RotateTowardsTarget();
         }
 
         if (EnemyHp <= 0)
         {
-            Instantiate(ZombieDied, transform.position, transform.rotation);
+            Instantiate(EnemyDied, transform.position, transform.rotation);
             RandomItemGunX3 = Random.Range(0, 100);
             RandomItemGunRate = Random.Range(0, 100);
             for (int i = 0; i < 10; i++)
@@ -79,9 +72,21 @@ public class Enemy1Down : MonoBehaviour
         if (hitInfo.gameObject.name == "Bullet(Clone)" || hitInfo.gameObject.name == "BulletX3L(Clone)"
             || hitInfo.gameObject.name == "BulletX3R(Clone)")
         {
-            EnemyHp = EnemyHp - Bullet.bulletDamage;
+            if (delayHp < Time.time)
+            {
+                EnemyHp = EnemyHp - Bullet.bulletDamage;
+                delayHp = Time.time + 0.1f;
+            }
             Destroy(hitInfo.gameObject);
         }
+    }
 
+    private void RotateTowardsTarget()
+    {
+        var offset = -90f;
+        Vector2 direction = Player.transform.position - transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
     }
 }

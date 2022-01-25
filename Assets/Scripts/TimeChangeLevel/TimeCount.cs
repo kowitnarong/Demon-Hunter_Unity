@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class TimeCount : MonoBehaviour
 {
     Image timerBar;
     public float maxTime = 90;
     float timeLeft;
+    public int index;
+    public string levelName;
 
     private void Start()
     {
@@ -23,7 +27,11 @@ public class TimeCount : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 0;
+
+            SceneManager.LoadScene(index);
+
+            SceneManager.LoadScene(levelName);
+            //Time.timeScale = 0;
         }
     }
 }

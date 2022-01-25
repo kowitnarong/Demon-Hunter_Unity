@@ -92,5 +92,21 @@ public class BulletX3L : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        if (hitInfo.gameObject.name == "Block (4)")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (5)")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (6)")
+        {
+            Destroy(gameObject);
+        }
+        if (hitInfo.gameObject.name == "Block (7)")
+        {
+            Destroy(gameObject);
+        }
     }
 }

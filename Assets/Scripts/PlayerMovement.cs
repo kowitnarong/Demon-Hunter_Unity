@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using UnityEngine.SceneManagement;
+
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 2.5f;
+    private float TempMoveSpeed;
     static public int hpPlayer = 3;
     static public int curCoin = 0;
     private float hpCDCheck = 0.0f;
@@ -15,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private float fireRate = 0.2f;
     private float nextFire = 0.0F;
 
+    public int index;
+    public string LevelRestart;
+
     Vector2 movement;
 
     Vector2 FireDirection;
@@ -23,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        TempMoveSpeed = moveSpeed;
     }
 
     // Update is called once per frame
@@ -73,6 +79,13 @@ public class PlayerMovement : MonoBehaviour
             fireOn = false;
         }
 
+        //HP Check
+        if (hpPlayer <= 0)
+        {
+            hpPlayer = 3;
+            SceneManager.LoadScene(index);
+            SceneManager.LoadScene(LevelRestart);
+        }
     }
     void FixedUpdate()
     {
@@ -106,6 +119,35 @@ public class PlayerMovement : MonoBehaviour
                 }
                 hpCDCheck = Time.time;
             }
+        }
+    }
+    void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        Debug.Log("collision name = " + hitInfo.gameObject.name);
+        if (hitInfo.gameObject.name == "Water")
+        {
+            moveSpeed = (float)(moveSpeed / 2);
+        }
+        if (hitInfo.gameObject.name == "FlyEnemy(Clone)")
+        {
+            if (Time.time > hpCDCheck + hpCD)
+            {
+                hpPlayer -= 1;
+                if (hitInfo.gameObject.name == "FlyEnemy(Clone)")
+                {
+                    hitInfo.gameObject.GetComponent<FlyEnemy>().EnemyHp = 0;
+                }
+                hpCDCheck = Time.time;
+            }
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D hitInfo)
+    {
+        Debug.Log("collision name = " + hitInfo.gameObject.name);
+        if (hitInfo.gameObject.name == "Water")
+        {
+            moveSpeed = TempMoveSpeed;
         }
     }
 }
