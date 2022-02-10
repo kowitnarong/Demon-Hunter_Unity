@@ -1,0 +1,126 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &75245824265178640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7921257833111161977}
+  - component: {fileID: 1122165368341277784}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7921257833111161977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75245824265178640}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1122165368341277784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 75245824265178640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e4b8dc074794ca4f86b12f247847b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: ShootGun
+    clip: {fileID: 8300000, guid: a77bcd877a111534ca3fc8d8e3a9541a, type: 3}
+    volume: 0.4
+    pitch: 1
+    spatial: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: BG_Scene1
+    clip: {fileID: 8300000, guid: 00379ff33019bab4c9495c70aa3c3ff7, type: 3}
+    volume: 0.15
+    pitch: 1
+    spatial: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BG_Scene2
+    clip: {fileID: 8300000, guid: 0e3b57fe9497c4a4cb25a0414d430a2c, type: 3}
+    volume: 0.15
+    pitch: 1
+    spatial: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: BG_Scene3
+    clip: {fileID: 8300000, guid: 67b2c9de31a741c409c8e3fa5d05221a, type: 3}
+    volume: 0.15
+    pitch: 1
+    spatial: 0
+    loop: 1
+    source: {fileID: 0}
+  - name: Grab_Item
+    clip: {fileID: 8300000, guid: 29ca5152e0d55834ca3d9d120603da03, type: 3}
+    volume: 0.4
+    pitch: 1
+    spatial: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDead
+    clip: {fileID: 8300000, guid: 8f84982758a209146b8eeaf93d0ab00b, type: 3}
+    volume: 0.1
+    pitch: 1
+    spatial: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: PlayerGetHit
+    clip: {fileID: 8300000, guid: 160e2fa4aaf408c4cbda7124ebed5011, type: 3}
+    volume: 0.3
+    pitch: 1
+    spatial: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: UseItem
+    clip: {fileID: 8300000, guid: 87f8e7126dabbb240878fe9425409a25, type: 3}
+    volume: 0.4
+    pitch: 1
+    spatial: 0
+    loop: 0
+    source: {fileID: 0}
+  Level1:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatial: 0
+    loop: 0
+    source: {fileID: 0}
+  Level2:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatial: 0
+    loop: 0
+    source: {fileID: 0}
+  Level3:
+    name: 
+    clip: {fileID: 0}
+    volume: 0
+    pitch: 0
+    spatial: 0
+    loop: 0
+    source: {fileID: 0}

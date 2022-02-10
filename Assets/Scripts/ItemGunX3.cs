@@ -24,6 +24,7 @@ public class ItemGunX3 : MonoBehaviour
         Debug.Log("collision name = " + hitInfo.gameObject.name);
         if (hitInfo.gameObject.name == "Player")
         {
+            FindObjectOfType<AudioManager>().Play("Grab_Item");
             if (Bullet.curItem == "normal")
             {
                 Bullet.curItem = "X3";

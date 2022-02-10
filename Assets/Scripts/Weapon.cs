@@ -33,6 +33,7 @@ public class Weapon : MonoBehaviour
             Debug.Log(Bullet.curItem);
             if (Bullet.curItem == "X3")
             {
+                FindObjectOfType<AudioManager>().Play("UseItem");
                 Bullet.gunMode = Bullet.curItem;
                 resetItemTime = DurationGunX3;
                 useItem = true;
@@ -40,6 +41,7 @@ public class Weapon : MonoBehaviour
             }
             if (Bullet.curItem == "RateX2")
             {
+                FindObjectOfType<AudioManager>().Play("UseItem");
                 fireRate = fireRate / 2;
                 resetItemTime = DurationGunRate;
                 useItem = true;

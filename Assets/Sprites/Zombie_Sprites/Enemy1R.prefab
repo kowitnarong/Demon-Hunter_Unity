@@ -98,10 +98,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858f4fd3dc5e96d4885f2369d720136d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   ZombieDied: {fileID: 9010555848138532888, guid: 29813e2a87a5efc4aa4c965ee60dd9af, type: 3}
+  speed: 1.5
+  TempSpeed: 0
+  FirstMove: 0
   EnemyHp: 1
+  RandomItemGunX3: 0
   ItemGunX3Drop: {fileID: 6105974719032253800, guid: 33d19746f53b3044c9a4cdf1ea739503, type: 3}
+  RandomItemGunRate: 0
   ItemGunRateDrop: {fileID: 3810484021316313290, guid: bc69f659315174a4f8f1ae36785a9fab, type: 3}
+  AmountItemGunX3: 4
+  AmountItemGunRate: 4
+  ZombieStack: 0
 --- !u!95 &1898920055097700028
 Animator:
   serializedVersion: 3

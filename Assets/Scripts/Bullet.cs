@@ -21,6 +21,11 @@ public class Bullet : MonoBehaviour
     bool shootLeftDown = false;
     bool shootRightDown = false;
 
+    void Awake()
+    {
+        FindObjectOfType<AudioManager>().Play("ShootGun");
+    }
+
     // Start is called before the first frame update
     void Start()
     {

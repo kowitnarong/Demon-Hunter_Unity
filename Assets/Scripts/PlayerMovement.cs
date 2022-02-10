@@ -71,7 +71,6 @@ public class PlayerMovement : MonoBehaviour
             fireOn = true;
             nextFire = Time.time + fireRate;
             FireDirection.y = -1;
-            FireDirection.x = 0;
         }
 
         if (nextFire < Time.time)
@@ -105,6 +104,7 @@ public class PlayerMovement : MonoBehaviour
             if (Time.time > hpCDCheck + hpCD)
             {
                 hpPlayer -= 1;
+                FindObjectOfType<AudioManager>().Play("PlayerGetHit");
                 if (hitInfo.gameObject.name == "Enemy1U(Clone)")
                 {
                     hitInfo.gameObject.GetComponent<Enemy1Up>().EnemyHp = 0;
@@ -137,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
             if (Time.time > hpCDCheck + hpCD)
             {
                 hpPlayer -= 1;
+                FindObjectOfType<AudioManager>().Play("PlayerGetHit");
                 if (hitInfo.gameObject.name == "FlyEnemy(Clone)")
                 {
                     hitInfo.gameObject.GetComponent<FlyEnemy>().EnemyHp = 0;

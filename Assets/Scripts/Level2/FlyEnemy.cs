@@ -38,6 +38,7 @@ public class FlyEnemy : MonoBehaviour
         if (EnemyHp <= 0)
         {
             Instantiate(EnemyDied, transform.position, transform.rotation);
+            FindObjectOfType<AudioManager>().Play("EnemyDead");
             RandomItemGunX3 = Random.Range(0, 100);
             RandomItemGunRate = Random.Range(0, 100);
             for (int i = 0; i < 10; i++)
