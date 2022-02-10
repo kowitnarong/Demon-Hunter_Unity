@@ -104,6 +104,8 @@ MonoBehaviour:
   TempSpeed: 0
   FirstMove: 0
   EnemyHp: 1
+  ItemMoneyDrop: {fileID: 1217772144804149882, guid: b18fbf26cfd95d74bb9ced48383536af, type: 3}
+  RandomItemMoney: 0
   RandomItemGunX3: 0
   ItemGunX3Drop: {fileID: 6105974719032253800, guid: 33d19746f53b3044c9a4cdf1ea739503, type: 3}
   RandomItemGunRate: 0

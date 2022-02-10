@@ -30,6 +30,7 @@ public class TimeCount : MonoBehaviour
         {
             ItemGunX3.ItemGunX3Count = 0;
             ItemGunRate.ItemGunRateCount = 0;
+            PlayerMovement.hpPlayer = 5;
             Bullet.gunMode = "normal";
             Bullet.curItem = "normal";
             ChangeScene = true;

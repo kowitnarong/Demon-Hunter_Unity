@@ -164,8 +164,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3376845b7879468429e863a40eba7801, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyDied: {fileID: 9010555848138532888, guid: 29813e2a87a5efc4aa4c965ee60dd9af, type: 3}
+  EnemyDied: {fileID: 9010555848138532888, guid: 0e83d6df21aa11d47abdd2ed643c3afe, type: 3}
   EnemyHp: 2
-  delayHp: 0
+  ItemMoneyDrop: {fileID: 1217772144804149882, guid: b18fbf26cfd95d74bb9ced48383536af, type: 3}
+  RandomItemMoney: 0
+  RandomItemGunX3: 0
   ItemGunX3Drop: {fileID: 6105974719032253800, guid: 33d19746f53b3044c9a4cdf1ea739503, type: 3}
+  RandomItemGunRate: 0
   ItemGunRateDrop: {fileID: 3810484021316313290, guid: bc69f659315174a4f8f1ae36785a9fab, type: 3}
+  AmountItemGunX3: 0
+  AmountItemGunRate: 0

@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 2.5f;
     private float TempMoveSpeed;
-    static public int hpPlayer = 3;
+    static public int hpPlayer = 5;
     static public int curCoin = 0;
     private float hpCDCheck = 0.0f;
     public float hpCD = 2.0f;
@@ -81,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
         //HP Check
         if (hpPlayer <= 0)
         {
-            hpPlayer = 3;
+            hpPlayer = 5;
+            curCoin = 0;
             ItemGunX3.ItemGunX3Count = 0;
             ItemGunRate.ItemGunRateCount = 0;
             Bullet.gunMode = "normal";
@@ -144,6 +145,12 @@ public class PlayerMovement : MonoBehaviour
                 }
                 hpCDCheck = Time.time;
             }
+        }
+        if (hitInfo.gameObject.name == "Money(Clone)")
+        {
+            curCoin += 1;
+            FindObjectOfType<AudioManager>().Play("Grab_Item");
+            Destroy(hitInfo.gameObject);
         }
     }
 

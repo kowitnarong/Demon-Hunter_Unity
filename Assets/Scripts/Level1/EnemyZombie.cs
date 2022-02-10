@@ -14,6 +14,9 @@ public class EnemyZombie : MonoBehaviour
     public float FirstMove;
     public int EnemyHp = 1;
 
+    public GameObject ItemMoneyDrop;
+    [HideInInspector]
+    public int RandomItemMoney;
     [HideInInspector]
     public int RandomItemGunX3;
     public GameObject ItemGunX3Drop;
@@ -46,28 +49,29 @@ public class EnemyZombie : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("EnemyDead");
             RandomItemGunX3 = Random.Range(0, 100);
             RandomItemGunRate = Random.Range(0, 100);
-            for (int i = 0; i < 10; i++)
+            RandomItemMoney = Random.Range(0, 100);
+            if (RandomItemMoney >= 20 && RandomItemMoney < 40)
             {
-                if (RandomItemGunX3 == i)
+                Instantiate(ItemMoneyDrop, transform.position, ItemMoneyDrop.transform.rotation);
+                RandomItemMoney = 99;
+            }
+            else if (RandomItemGunX3 >= 10 && RandomItemGunX3 < 20)
+            {
+                if (ItemGunX3.ItemGunX3Count < AmountItemGunX3)
                 {
-                    if (ItemGunX3.ItemGunX3Count < AmountItemGunX3)
-                    {
-                        Instantiate(ItemGunX3Drop, transform.position, transform.rotation);
-                        ItemGunX3.ItemGunX3Count += 1;
-                    }
-                    RandomItemGunX3 = 99;
-                    break;
+                    Instantiate(ItemGunX3Drop, transform.position, ItemGunX3Drop.transform.rotation);
+                    ItemGunX3.ItemGunX3Count += 1;
                 }
-                if (RandomItemGunRate == i)
+                RandomItemGunX3 = 99;
+            }
+            else if (RandomItemGunRate >= 0 && RandomItemGunRate < 10)
+            {
+                if (ItemGunRate.ItemGunRateCount < AmountItemGunRate)
                 {
-                    if (ItemGunRate.ItemGunRateCount < AmountItemGunRate)
-                    {
-                        Instantiate(ItemGunRateDrop, transform.position, transform.rotation);
-                        ItemGunRate.ItemGunRateCount += 1;
-                    }
-                    RandomItemGunRate = 99;
-                    break;
+                    Instantiate(ItemGunRateDrop, transform.position, ItemGunRateDrop.transform.rotation);
+                    ItemGunRate.ItemGunRateCount += 1;
                 }
+                RandomItemGunRate = 99;
             }
             Destroy(gameObject);
         }
