@@ -7141,6 +7141,10 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7220553937713354538, guid: ba29929e01bc40c4fae6d546aed870b5, type: 3}
+      propertyPath: index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7220553937713354538, guid: ba29929e01bc40c4fae6d546aed870b5, type: 3}
       propertyPath: ZombieUp
       value: 
       objectReference: {fileID: 3144403844686026216, guid: bf7e1bef4e2132043bbf2a9da3dd0124, type: 3}

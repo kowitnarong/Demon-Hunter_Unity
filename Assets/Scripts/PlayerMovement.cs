@@ -146,6 +146,16 @@ public class PlayerMovement : MonoBehaviour
                 hpCDCheck = Time.time;
             }
         }
+        if (hitInfo.gameObject.name == "BossBullet(Clone)")
+        {
+            if (Time.time > hpCDCheck + hpCD)
+            {
+                hpPlayer -= 1;
+                FindObjectOfType<AudioManager>().Play("PlayerGetHit");
+                Destroy(hitInfo.gameObject);
+                hpCDCheck = Time.time;
+            }
+        }
         if (hitInfo.gameObject.name == "Money(Clone)")
         {
             curCoin += 1;
