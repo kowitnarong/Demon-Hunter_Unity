@@ -81,6 +81,7 @@ public class PlayerMovement : MonoBehaviour
         //HP Check
         if (hpPlayer <= 0)
         {
+            BossFight.EnemyHpBoss = 50;
             hpPlayer = 5;
             curCoin = 0;
             ItemGunX3.ItemGunX3Count = 0;
@@ -89,6 +90,42 @@ public class PlayerMovement : MonoBehaviour
             Bullet.curItem = "normal";
             SceneManager.LoadScene(index);
             SceneManager.LoadScene(LevelRestart);
+        }
+        if (Input.GetButton("Level1"))
+        {
+            BossFight.EnemyHpBoss = 50;
+            hpPlayer = 5;
+            ItemGunX3.ItemGunX3Count = 0;
+            ItemGunRate.ItemGunRateCount = 0;
+            Bullet.gunMode = "normal";
+            Bullet.curItem = "normal";
+            TimeCount.ChangeScene = true;
+            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Level1");
+        }
+        else if (Input.GetButton("Level2"))
+        {
+            BossFight.EnemyHpBoss = 50;
+            hpPlayer = 5;
+            ItemGunX3.ItemGunX3Count = 0;
+            ItemGunRate.ItemGunRateCount = 0;
+            Bullet.gunMode = "normal";
+            Bullet.curItem = "normal";
+            TimeCount.ChangeScene = true;
+            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Level2");
+        }
+        else if (Input.GetButton("Level3"))
+        {
+            BossFight.EnemyHpBoss = 50;
+            hpPlayer = 5;
+            ItemGunX3.ItemGunX3Count = 0;
+            ItemGunRate.ItemGunRateCount = 0;
+            Bullet.gunMode = "normal";
+            Bullet.curItem = "normal";
+            TimeCount.ChangeScene = true;
+            SceneManager.LoadScene(2);
+            SceneManager.LoadScene("Level3");
         }
     }
     void FixedUpdate()

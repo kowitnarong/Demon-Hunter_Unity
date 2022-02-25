@@ -10,7 +10,6 @@ public class TimeCount : MonoBehaviour
     Image timerBar;
     public float maxTime = 90;
     public float timeLeft;
-    public int index;
     public string levelName;
     public static bool ChangeScene;
 
@@ -33,9 +32,8 @@ public class TimeCount : MonoBehaviour
             PlayerMovement.hpPlayer = 5;
             Bullet.gunMode = "normal";
             Bullet.curItem = "normal";
-            ChangeScene = true;
-            SceneManager.LoadScene(index);
-            SceneManager.LoadScene(levelName);
+            SceneChange.CutScene = true;
+            SceneChange.CurrentScene = levelName;
             //Time.timeScale = 0;
         }
     }
