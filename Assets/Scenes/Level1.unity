@@ -890,8 +890,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -329.60004, y: 236}
-  m_SizeDelta: {x: -1206, y: -738}
+  m_AnchoredPosition: {x: -343.5138, y: 235.16998}
+  m_SizeDelta: {x: -1199.6001, y: -728}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &473691729
 CanvasRenderer:
@@ -922,12 +922,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 40
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -4520,7 +4520,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 022d07087668ea34cb023e7b822ec3ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 5
+  maxTime: 90
   timeLeft: 0
   levelName: Level1
 --- !u!114 &1113212033
@@ -4637,7 +4637,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1145422768}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.648895, y: 5.5871387, z: 0}
+  m_LocalPosition: {x: -9.9, y: 5.5871387, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5361,8 +5361,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -329.60004, y: 200.16998}
-  m_SizeDelta: {x: -1206, y: -738}
+  m_AnchoredPosition: {x: -343.5138, y: 196.2}
+  m_SizeDelta: {x: -1199.6001, y: -719.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780850436
 MonoBehaviour:
@@ -5385,8 +5385,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 25
+    m_Font: {fileID: 12800000, guid: 652f7165b7c30ab46af6c4aad90a639b, type: 2}
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5482,7 +5482,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1820918622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.71, y: 4.65, z: 0}
+  m_LocalPosition: {x: -9.961104, y: 4.65, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

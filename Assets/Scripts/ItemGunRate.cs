@@ -10,6 +10,10 @@ public class ItemGunRate : MonoBehaviour
     static public int ItemGunRateCount = 0;
     void Update()
     {
+        UseItem();
+    }
+    void UseItem()
+    {
         if (Input.GetButton("UseItem") && Bullet.curItem == "RateX2")
         {
             if (transform.position == Icon.transform.position)
@@ -18,7 +22,6 @@ public class ItemGunRate : MonoBehaviour
             }
         }
     }
-
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("collision name = " + hitInfo.gameObject.name);

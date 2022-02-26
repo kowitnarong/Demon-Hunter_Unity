@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6105974719032253847}
   - component: {fileID: 6105974719032253846}
   - component: {fileID: 6105974719032253801}
+  - component: {fileID: 7824883714638489568}
   m_Layer: 0
   m_Name: itemGunX3
   m_TagString: Untagged
@@ -125,3 +126,22 @@ MonoBehaviour:
   itemGunX3: {fileID: 6105974719032253800}
   CurItemPoint: {fileID: 8670458279997066535, guid: 81362bca21b43d148b45bd46c2d644d3, type: 3}
   Icon: {fileID: 2631548901018063751, guid: 800c4d4c362772f4a83e0799d8986476, type: 3}
+--- !u!95 &7824883714638489568
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6105974719032253800}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2cb6e2facba34cf499b37466f9327401, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

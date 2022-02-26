@@ -12,7 +12,7 @@ public class BossBullet : MonoBehaviour
     Vector3 TempTranform;
 
     public Rigidbody2D rb;
-    bool dsd = false;
+    bool addForce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,10 +24,14 @@ public class BossBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (TempTranform != transform.position && dsd == false)
+        MoveBullet();
+    }
+    void MoveBullet()
+    {
+        if (TempTranform != transform.position && addForce == false)
         {
             rb.velocity = (TempTranform - transform.position).normalized * speed;
-            dsd = true;
+            addForce = true;
         }
         else
         {

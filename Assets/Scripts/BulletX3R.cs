@@ -20,6 +20,15 @@ public class BulletX3R : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetDirectionBullet();
+    }
+
+    void Update()
+    {
+        MoveBullet();
+    }
+    void SetDirectionBullet()
+    {
         movementLeftUp.x = -0.5f;
         movementLeftUp.y = 0.5f;
 
@@ -50,7 +59,7 @@ public class BulletX3R : MonoBehaviour
         }
     }
 
-    void Update()
+    void MoveBullet()
     {
         if (shootLeft)
         {

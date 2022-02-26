@@ -29,6 +29,35 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetDirectionBullet();
+    }
+
+    void Update()
+    {
+        MoveBullet();
+    }
+
+    void MoveBullet()
+    {
+        if (shootLeftUp)
+        {
+            rb.MovePosition(rb.position + movementLeftUp * 12.0f * Time.fixedDeltaTime);
+        }
+        else if (shootRightUp)
+        {
+            rb.MovePosition(rb.position + movementRightUp * 12.0f * Time.fixedDeltaTime);
+        }
+        else if (shootLeftDown)
+        {
+            rb.MovePosition(rb.position + movementLeftDown * 12.0f * Time.fixedDeltaTime);
+        }
+        else if (shootRightDown)
+        {
+            rb.MovePosition(rb.position + movementRightDown * 12.0f * Time.fixedDeltaTime);
+        }
+    }
+    void SetDirectionBullet()
+    {
         if (Input.GetButton("NormalFireLeft") && Input.GetButton("NormalFireUp") && gunMode == "normal")
         {
             movementLeftUp.x = -1;
@@ -61,35 +90,16 @@ public class Bullet : MonoBehaviour
         {
             rb.velocity = transform.right * speed;
         }
-        else if(Input.GetButton("NormalFireUp"))
+        else if (Input.GetButton("NormalFireUp"))
         {
             rb.velocity = transform.up * speed;
         }
-        else if(Input.GetButton("NormalFireDown"))
+        else if (Input.GetButton("NormalFireDown"))
         {
             rb.velocity = -transform.up * speed;
         }
     }
 
-    void Update()
-    {
-        if (shootLeftUp)
-        {
-            rb.MovePosition(rb.position + movementLeftUp * 12.0f * Time.fixedDeltaTime);
-        }
-        else if (shootRightUp)
-        {
-            rb.MovePosition(rb.position + movementRightUp * 12.0f * Time.fixedDeltaTime);
-        }
-        else if (shootLeftDown)
-        {
-            rb.MovePosition(rb.position + movementLeftDown * 12.0f * Time.fixedDeltaTime);
-        }
-        else if (shootRightDown)
-        {
-            rb.MovePosition(rb.position + movementRightDown * 12.0f * Time.fixedDeltaTime);
-        }
-    }
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("collision name = " + hitInfo.gameObject.name);

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3810484021316313293}
   - component: {fileID: 3810484021316313292}
   - component: {fileID: 3810484021316313291}
+  - component: {fileID: -2988712855558583136}
   m_Layer: 0
   m_Name: itemFirerate
   m_TagString: Untagged
@@ -125,3 +126,22 @@ MonoBehaviour:
   itemGunRate: {fileID: 3810484021316313290}
   CurItemPoint: {fileID: 8670458279997066535, guid: 81362bca21b43d148b45bd46c2d644d3, type: 3}
   Icon: {fileID: 2631548901018063751, guid: 800c4d4c362772f4a83e0799d8986476, type: 3}
+--- !u!95 &-2988712855558583136
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3810484021316313290}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c9a43df5e23d7ac4e8a8e69e10378beb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

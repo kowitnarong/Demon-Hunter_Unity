@@ -31,12 +31,19 @@ public class FlyEnemy : MonoBehaviour
 
     void Update()
     {
+        SetMovement();
+        FlyEnemyDead();
+    }
+    void SetMovement()
+    {
         transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
         if (Vector3.Distance(transform.position, Player.transform.position) > 1f)
         {
             RotateTowardsTarget();
         }
-
+    }
+    void FlyEnemyDead()
+    {
         if (EnemyHp <= 0)
         {
             Instantiate(EnemyDied, transform.position, transform.rotation);
@@ -70,6 +77,7 @@ public class FlyEnemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("collision name = " + hitInfo.gameObject.name);

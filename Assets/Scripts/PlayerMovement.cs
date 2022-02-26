@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour
     private float fireRate = 0.2f;
     private float nextFire = 0.0F;
 
-    public int index;
     public string LevelRestart;
 
     Vector2 movement;
@@ -35,62 +34,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        GetAxisMovement();
+        SetAnimatePlayer();
+        SetFireDirection();
+        IsPlayerDead();
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
-        animator.SetFloat("Right", FireDirection.x);
-        animator.SetFloat("Up", FireDirection.y);
-        animator.SetBool("FireOn", fireOn);
-
-        if (Input.GetButton("NormalFireLeft") && Time.time > nextFire)
-        {
-            fireOn = true;
-            nextFire = Time.time + fireRate;
-            FireDirection.x = -1;
-            FireDirection.y = 0;
-        }
-        else if (Input.GetButton("NormalFireRight") && Time.time > nextFire)
-        {
-            fireOn = true;
-            nextFire = Time.time + fireRate;
-            FireDirection.x = 1;
-            FireDirection.y = 0;
-        }
-        else if (Input.GetButton("NormalFireUp") && Time.time > nextFire)
-        {
-            fireOn = true;
-            nextFire = Time.time + fireRate;
-            FireDirection.y = 1;
-            FireDirection.x = 0;
-        }
-        else if (Input.GetButton("NormalFireDown") && Time.time > nextFire)
-        {
-            fireOn = true;
-            nextFire = Time.time + fireRate;
-            FireDirection.y = -1;
-        }
-
-        if (nextFire < Time.time)
-        {
-            fireOn = false;
-        }
-
-        //HP Check
-        if (hpPlayer <= 0)
-        {
-            BossFight.EnemyHpBoss = 50;
-            hpPlayer = 5;
-            curCoin = 0;
-            ItemGunX3.ItemGunX3Count = 0;
-            ItemGunRate.ItemGunRateCount = 0;
-            Bullet.gunMode = "normal";
-            Bullet.curItem = "normal";
-            SceneManager.LoadScene(index);
-            SceneManager.LoadScene(LevelRestart);
-        }
         if (Input.GetButton("Level1"))
         {
             BossFight.EnemyHpBoss = 50;
@@ -129,6 +77,78 @@ public class PlayerMovement : MonoBehaviour
         }
     }
     void FixedUpdate()
+    {
+        SetMovementPlayer();
+    }
+
+    void GetAxisMovement()
+    {
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+    }
+    void SetAnimatePlayer()
+    {
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Right", FireDirection.x);
+        animator.SetFloat("Up", FireDirection.y);
+        animator.SetBool("FireOn", fireOn);
+    }
+
+    void SetFireDirection()
+    {
+        if (Input.GetButton("NormalFireLeft") && Time.time > nextFire)
+        {
+            fireOn = true;
+            nextFire = Time.time + fireRate;
+            FireDirection.x = -1;
+            FireDirection.y = 0;
+        }
+        else if (Input.GetButton("NormalFireRight") && Time.time > nextFire)
+        {
+            fireOn = true;
+            nextFire = Time.time + fireRate;
+            FireDirection.x = 1;
+            FireDirection.y = 0;
+        }
+        else if (Input.GetButton("NormalFireUp") && Time.time > nextFire)
+        {
+            fireOn = true;
+            nextFire = Time.time + fireRate;
+            FireDirection.y = 1;
+            FireDirection.x = 0;
+        }
+        else if (Input.GetButton("NormalFireDown") && Time.time > nextFire)
+        {
+            fireOn = true;
+            nextFire = Time.time + fireRate;
+            FireDirection.y = -1;
+        }
+        if (nextFire < Time.time)
+        {
+            fireOn = false;
+        }
+    }
+
+    void IsPlayerDead()
+    {
+        //HP Check
+        if (hpPlayer <= 0)
+        {
+            BossFight.EnemyHpBoss = 50;
+            hpPlayer = 5;
+            curCoin = 0;
+            ItemGunX3.ItemGunX3Count = 0;
+            ItemGunRate.ItemGunRateCount = 0;
+            Bullet.gunMode = "normal";
+            Bullet.curItem = "normal";
+            SceneChange.RestartScene = LevelRestart;
+            SceneManager.LoadScene("GameOverDisplay");
+        }
+    }
+
+    void SetMovementPlayer()
     {
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }

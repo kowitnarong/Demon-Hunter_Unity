@@ -12,13 +12,16 @@ public class TimeCount : MonoBehaviour
     public float timeLeft;
     public string levelName;
     public static bool ChangeScene;
-
-    private void Start()
+    void Start()
     {
         timerBar = GetComponent<Image>();
         timeLeft = maxTime;
     }
     void Update()
+    {
+        TimeCheck();
+    }
+    void TimeCheck()
     {
         if (timeLeft > 0)
         {
@@ -34,7 +37,6 @@ public class TimeCount : MonoBehaviour
             Bullet.curItem = "normal";
             SceneChange.CutScene = true;
             SceneChange.CurrentScene = levelName;
-            //Time.timeScale = 0;
         }
     }
 }

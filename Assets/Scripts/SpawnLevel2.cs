@@ -66,6 +66,10 @@ public class SpawnLevel2 : MonoBehaviour
     }
     void Update()
     {
+        SetSpawnPattern();
+    }
+    void SetSpawnPattern()
+    {
         if (Spawn1L + 0.0f < Time.time)
         {
             Instantiate(Enemy1PrefabL, EnemySpawnL1.position, EnemySpawnL1.rotation);

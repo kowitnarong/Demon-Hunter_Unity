@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnLevel1_1 : MonoBehaviour
+public class SpawnLevel1 : MonoBehaviour
 {
 
     public Transform EnemySpawnL1;
@@ -49,6 +49,10 @@ public class SpawnLevel1_1 : MonoBehaviour
         Spawn2D = Time.time;
     }
     void Update()
+    {
+       SetSpawnPattern();
+    }
+    void SetSpawnPattern()
     {
         if (Spawn1L + 0.0f < Time.time)
         {

@@ -16,6 +16,10 @@ public class ShowText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetHpCoin();
+    }
+    void SetHpCoin()
+    {
         textHp = "X " + PlayerMovement.hpPlayer.ToString();
         textCoin = "X " + PlayerMovement.curCoin.ToString();
         if (showHp)

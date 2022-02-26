@@ -30,6 +30,11 @@ public class BossFight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        BossMovement();
+        BossShoot();
+    }
+    void BossMovement()
+    {
         if (moveLeft)
         {
             rb.velocity = -transform.right * speed;
@@ -48,6 +53,9 @@ public class BossFight : MonoBehaviour
                 moveRight = false;
             }
         }
+    }
+    void BossShoot()
+    {
         if (Time.time > nextFire + FireRate)
         {
             Instantiate(BossBullet, firePoint.transform.position, firePoint.rotation);

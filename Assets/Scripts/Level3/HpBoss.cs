@@ -8,10 +8,12 @@ using UnityEngine.SceneManagement;
 public class HpBoss : MonoBehaviour
 {
     Image timerBar;
+    [HideInInspector]
     public float maxHP;
+    [HideInInspector]
     public float HpLeft;
-    public int index;
     public string levelName;
+    [HideInInspector]
     public static bool ChangeScene;
 
     private void Start()
@@ -21,6 +23,10 @@ public class HpBoss : MonoBehaviour
         HpLeft = maxHP;
     }
     void Update()
+    {
+        BossDead();
+    }
+    void BossDead()
     {
         if (HpLeft > 0)
         {
@@ -34,9 +40,7 @@ public class HpBoss : MonoBehaviour
             PlayerMovement.hpPlayer = 5;
             Bullet.gunMode = "normal";
             Bullet.curItem = "normal";
-            ChangeScene = true;
-            SceneManager.LoadScene(index);
-            SceneManager.LoadScene(levelName);
+            SceneManager.LoadScene("EndDisplay");
             //Time.timeScale = 0;
         }
     }

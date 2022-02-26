@@ -10,6 +10,11 @@ public class ItemGunX3 : MonoBehaviour
     static public int ItemGunX3Count = 0;
     void Update()
     {
+        UseItem();
+    }
+    
+    void UseItem()
+    {
         if (Input.GetButton("UseItem") && Bullet.curItem == "X3")
         {
             if (transform.position == Icon.transform.position)
@@ -18,7 +23,6 @@ public class ItemGunX3 : MonoBehaviour
             }
         }
     }
-
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("collision name = " + hitInfo.gameObject.name);

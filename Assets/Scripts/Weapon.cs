@@ -28,6 +28,11 @@ public class Weapon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        SetGunMode();
+        ShootBullet();
+    }
+    void SetGunMode()
+    {
         if (Input.GetButton("UseItem") && useItem == false)
         {
             Debug.Log(Bullet.curItem);
@@ -55,7 +60,14 @@ public class Weapon : MonoBehaviour
             fireRate = TempFireRate;
             useItem = false;
         }
+        if (PlayerMovement.hpPlayer <= 0)
+        {
+            ChangeItemTime = Time.time;
+        }
+    }
 
+    void ShootBullet()
+    {
         if (Input.GetButton("NormalFireLeft") && Time.time > nextFire)
         {
             nextFire = Time.time + fireRate;
@@ -103,10 +115,6 @@ public class Weapon : MonoBehaviour
             {
                 ShootX3();
             }
-        }
-        if (PlayerMovement.hpPlayer <= 0)
-        {
-            ChangeItemTime = Time.time;
         }
     }
 

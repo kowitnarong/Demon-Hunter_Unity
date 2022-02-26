@@ -20,6 +20,15 @@ public class BulletX3L : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SetDirectionBullet();
+    }
+    void Update()
+    {
+        MoveBullet();
+    }
+
+    void SetDirectionBullet()
+    {
         movementLeftUp.x = -0.5f;
         movementLeftUp.y = 0.5f;
 
@@ -50,7 +59,7 @@ public class BulletX3L : MonoBehaviour
         }
     }
 
-    void Update()
+    void MoveBullet()
     {
         if (shootLeft)
         {
@@ -69,6 +78,7 @@ public class BulletX3L : MonoBehaviour
             rb.MovePosition(rb.position + movementRightDown * speed * Time.fixedDeltaTime);
         }
     }
+
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("collision name = " + hitInfo.gameObject.name);
