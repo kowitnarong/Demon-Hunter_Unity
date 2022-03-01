@@ -42,36 +42,42 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButton("Level1"))
         {
             BossFight.EnemyHpBoss = 50;
+            BossFight.BossDead = false;
             hpPlayer = 5;
             ItemGunX3.ItemGunX3Count = 0;
             ItemGunRate.ItemGunRateCount = 0;
             Bullet.gunMode = "normal";
             Bullet.curItem = "normal";
-            TimeCount.ChangeScene = true;
+            AudioManager.ChangeScene = true;
+            SceneChange.CurrentScene = "Level1";
             SceneManager.LoadScene(0);
             SceneManager.LoadScene("Level1");
         }
         else if (Input.GetButton("Level2"))
         {
             BossFight.EnemyHpBoss = 50;
+            BossFight.BossDead = false;
             hpPlayer = 5;
             ItemGunX3.ItemGunX3Count = 0;
             ItemGunRate.ItemGunRateCount = 0;
             Bullet.gunMode = "normal";
             Bullet.curItem = "normal";
-            TimeCount.ChangeScene = true;
+            AudioManager.ChangeScene = true;
+            SceneChange.CurrentScene = "Level2";
             SceneManager.LoadScene(1);
             SceneManager.LoadScene("Level2");
         }
         else if (Input.GetButton("Level3"))
         {
             BossFight.EnemyHpBoss = 50;
+            BossFight.BossDead = false;
             hpPlayer = 5;
             ItemGunX3.ItemGunX3Count = 0;
             ItemGunRate.ItemGunRateCount = 0;
             Bullet.gunMode = "normal";
             Bullet.curItem = "normal";
-            TimeCount.ChangeScene = true;
+            AudioManager.ChangeScene = true;
+            SceneChange.CurrentScene = "Level3";
             SceneManager.LoadScene(2);
             SceneManager.LoadScene("Level3");
         }

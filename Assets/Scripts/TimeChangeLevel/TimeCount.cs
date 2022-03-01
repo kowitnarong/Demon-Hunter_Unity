@@ -11,7 +11,6 @@ public class TimeCount : MonoBehaviour
     public float maxTime = 90;
     public float timeLeft;
     public string levelName;
-    public static bool ChangeScene;
     void Start()
     {
         timerBar = GetComponent<Image>();

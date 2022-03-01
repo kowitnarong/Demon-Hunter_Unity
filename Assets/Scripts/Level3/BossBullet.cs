@@ -31,12 +31,25 @@ public class BossBullet : MonoBehaviour
         if (TempTranform != transform.position && addForce == false)
         {
             rb.velocity = (TempTranform - transform.position).normalized * speed;
+            if (Vector3.Distance(transform.position, TempTranform) > 1f)
+            {
+                RotateTowardsTarget();
+            }
             addForce = true;
         }
         else
         {
             rb.AddForce(transform.forward);
         }
+        
+    }
+    private void RotateTowardsTarget()
+    {
+        var offset = -90f;
+        Vector2 direction = TempTranform - transform.position;
+        direction.Normalize();
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle + offset));
     }
     void OnTriggerEnter2D(Collider2D hitInfo)
     {

@@ -6,17 +6,24 @@ public class Enemy1Down : EnemyZombie
 {
     public override void Update()
     {
-        if (Time.time < FirstMove + 2.5f)
+        if (BossFight.BossDead == false)
         {
-            //transform.position += MoveY;
-            transform.position += Vector3.up * speed * Time.deltaTime;
-        }
-        else if (Time.time > FirstMove + 2.5f)
-        {
-            if (!ZombieStack)
+            if (Time.time < FirstMove + 2.5f)
             {
-                transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+                //transform.position += MoveY;
+                transform.position += Vector3.up * speed * Time.deltaTime;
             }
+            else if (Time.time > FirstMove + 2.5f)
+            {
+                if (!ZombieStack)
+                {
+                    transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+                }
+            }
+        }
+        else
+        {
+            EnemyHp = 0;
         }
 
         EnemyDead();

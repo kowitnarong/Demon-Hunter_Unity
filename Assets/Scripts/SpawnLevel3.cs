@@ -37,21 +37,11 @@ public class SpawnLevel3 : MonoBehaviour
     private float Spawn1R;
     private float Spawn2R;
 
-    private float Spawn1U;
-    private float Spawn2U;
-
-    private float Spawn1D;
-    private float Spawn2D;
-
     private float Spawn3L;
-    private float Spawn4L;
 
     private float Spawn3R;
-    private float Spawn4R;
 
     private float SwitchTime1 = 7.0f;
-    private float SwitchTime2 = 4.0f;
-    private float SwitchTime3 = 10.0f;
 
     void Start()
     {
@@ -61,11 +51,13 @@ public class SpawnLevel3 : MonoBehaviour
         Spawn2R = Time.time;
         Spawn3L = Time.time;
         Spawn3R = Time.time;
-
     }
     void Update()
     {
-        SetSpawnPattern();
+        if (BossFight.BossDead == false)
+        {
+            SetSpawnPattern();
+        }
     }
     void SetSpawnPattern()
     {

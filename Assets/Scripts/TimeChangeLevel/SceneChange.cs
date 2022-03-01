@@ -116,13 +116,14 @@ public class SceneChange : MonoBehaviour
         {
             CountTime = false;
             CountSceneTime = 5;
-            TimeCount.ChangeScene = true;
             isChangeScene = true;
         }
         if (isChangeScene)
         {
             SceneManager.LoadScene(indexScene);
             SceneManager.LoadScene(NextScene);
+            SceneChange.CurrentScene = NextScene;
+            AudioManager.ChangeScene = true;
             isChangeScene = false;
         }
         if (CountTime)
@@ -155,13 +156,14 @@ public class SceneChange : MonoBehaviour
             SceneManager.LoadScene(indexScene);
             SceneManager.LoadScene(NextScene);
             CurrentScene = "Level1";
+            AudioManager.ChangeScene = true;
             BossFight.EnemyHpBoss = 50;
+            BossFight.BossDead = false;
             PlayerMovement.hpPlayer = 5;
             ItemGunX3.ItemGunX3Count = 0;
             ItemGunRate.ItemGunRateCount = 0;
             Bullet.gunMode = "normal";
             Bullet.curItem = "normal";
-            TimeCount.ChangeScene = true;
             PlayerMovement.curCoin = 0;
         }
     }

@@ -18,7 +18,7 @@ public class AudioManager : MonoBehaviour
     bool PlaySoundLevel1;
     bool PlaySoundLevel2;
     bool PlaySoundLevel3;
-
+    public static bool ChangeScene;
     void Start()
     {
         Scene currentScene = SceneManager.GetActiveScene();
@@ -80,11 +80,9 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
-        Scene currentScene = SceneManager.GetActiveScene();
+        string sceneName = SceneChange.CurrentScene;
 
-        string sceneName = currentScene.name;
-
-        if (TimeCount.ChangeScene)
+        if (ChangeScene)
         {
             if (sceneName == "Level1")
             {
@@ -105,7 +103,7 @@ public class AudioManager : MonoBehaviour
                 PlaySoundLevel3 = true;
             }
             StopSoundLevel();
-            TimeCount.ChangeScene = false;
+            ChangeScene = false;
         }
     }
 

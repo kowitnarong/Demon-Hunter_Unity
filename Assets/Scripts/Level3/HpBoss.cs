@@ -30,18 +30,27 @@ public class HpBoss : MonoBehaviour
     {
         if (HpLeft > 0)
         {
+            BossFight.BossDead = false;
             HpLeft = BossFight.EnemyHpBoss;
             timerBar.fillAmount = HpLeft / maxHP;
         }
         else
         {
-            ItemGunX3.ItemGunX3Count = 0;
-            ItemGunRate.ItemGunRateCount = 0;
-            PlayerMovement.hpPlayer = 5;
-            Bullet.gunMode = "normal";
-            Bullet.curItem = "normal";
-            SceneManager.LoadScene("EndDisplay");
-            //Time.timeScale = 0;
+            BossFight.BossDead = true;
         }
+        if (BossFight.BossDead)
+        {
+            Invoke("ChangeSceneEnd", 4);
+        }
+    }
+    void ChangeSceneEnd()
+    {
+        ItemGunX3.ItemGunX3Count = 0;
+        ItemGunRate.ItemGunRateCount = 0;
+        PlayerMovement.hpPlayer = 5;
+        Bullet.gunMode = "normal";
+        Bullet.curItem = "normal";
+        SceneManager.LoadScene("EndDisplay");
+        //Time.timeScale = 0;
     }
 }

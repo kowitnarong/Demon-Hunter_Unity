@@ -19,6 +19,9 @@ public class BossFight : MonoBehaviour
     bool moveLeft = false;
     bool moveRight = false;
 
+    static public bool BossDead = false;
+    public GameObject BossDeadPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +33,16 @@ public class BossFight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        BossMovement();
-        BossShoot();
+        if (BossDead == false)
+        {
+            BossMovement();
+            BossShoot();
+        }
+        else
+        {
+            Instantiate(BossDeadPrefab, transform.position, transform.rotation);
+            Destroy(gameObject);
+        }
     }
     void BossMovement()
     {
