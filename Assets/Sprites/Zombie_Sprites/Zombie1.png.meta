@@ -84,6 +84,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -604,6 +605,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Zombie1_6: -1895540321200064708
+      Zombie1_19: 2711234063708930693
+      Zombie1_2: -8888137880808734524
+      Zombie1_17: 4484656578362731173
+      Zombie1_12: -6857680529805558729
+      Zombie1_11: -7065889134469245058
+      Zombie1_9: -489567831572546912
+      Zombie1_3: -9202475299933292329
+      Zombie1_10: 881325750332953079
+      Zombie1_15: -6227453928893245880
+      Zombie1_0: 7248761479721588043
+      Zombie1_1: -3418017811258667477
+      Zombie1_16: 2703998736246075082
+      Zombie1_13: 335041974105548786
+      Zombie1_4: 1425437023772573459
+      Zombie1_14: 4437615544726482110
+      Zombie1_7: 1788554862495720545
+      Zombie1_8: 6654858411564371560
+      Zombie1_5: -2760382452912541925
+      Zombie1_18: -4140639368937251514
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

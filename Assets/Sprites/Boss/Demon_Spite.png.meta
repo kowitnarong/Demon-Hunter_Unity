@@ -57,6 +57,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -400,6 +401,18 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Demon_1: 8954813872578069252
+      Demon_7: -7960351589147934266
+      Demon_9: -1845691181641651264
+      Demon_2: -1940908528617272751
+      Demon_0: 6897479667268090689
+      Demon_4: 3027676544100657071
+      Demon_8: -3287072301733668112
+      Demon_3: -4852002737857526351
+      Demon_5: 6181064247269503151
+      Demon_10: 3791707957330389740
+      Demon_6: -5948471928917789663
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

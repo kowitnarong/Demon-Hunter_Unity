@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     static public int curCoin = 0;
     private float hpCDCheck = 0.0f;
     public float hpCD = 2.0f;
+    static public bool EnemyEvade = false;
 
     public Rigidbody2D rb;
     public Animator animator;
@@ -85,6 +86,19 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         SetMovementPlayer();
+    }
+
+    public void EnableEnemyEvade()
+    {
+        EnemyEvade = true;
+        GetComponent<SpriteRenderer>().color = Color.red;
+        Invoke("DisableEnemyEvade", 5.0f);
+    }
+
+    void DisableEnemyEvade()
+    {
+        EnemyEvade = false;
+        GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     void GetAxisMovement()

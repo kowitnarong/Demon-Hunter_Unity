@@ -15,7 +15,14 @@ public class Enemy1R : EnemyZombie
             {
                 if (!ZombieStack)
                 {
-                    transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+                    if (PlayerMovement.EnemyEvade)
+                    {
+                        EnemyEvade();
+                    }
+                    else
+                    {
+                        EnemyChasing();
+                    }
                 }
             }
         }

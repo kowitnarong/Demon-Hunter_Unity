@@ -41,6 +41,17 @@ public class EnemyZombie : MonoBehaviour
     {
 
     }
+
+    public void EnemyChasing()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, speed * Time.deltaTime);
+    }
+
+    public void EnemyEvade()
+    {
+        transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, -speed * Time.deltaTime);
+    }
+
     public void EnemyDead()
     {
         if (EnemyHp <= 0)
