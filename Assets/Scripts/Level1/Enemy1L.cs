@@ -10,7 +10,7 @@ public class Enemy1L : EnemyZombie
         {
             if (Time.time < FirstMove + 2.5f)
             {
-                transform.position += Vector3.right * speed * Time.deltaTime;
+                transform.position += Vector3.right * 1.5f * Time.deltaTime;
             }
             else if (Time.time > FirstMove + 2.5f)
             {

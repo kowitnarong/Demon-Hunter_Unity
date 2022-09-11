@@ -11,7 +11,7 @@ public class Enemy1Down : EnemyZombie
             if (Time.time < FirstMove + 2.5f)
             {
                 //transform.position += MoveY;
-                transform.position += Vector3.up * speed * Time.deltaTime;
+                transform.position += Vector3.up * 1.5f * Time.deltaTime;
             }
             else if (Time.time > FirstMove + 2.5f)
             {
