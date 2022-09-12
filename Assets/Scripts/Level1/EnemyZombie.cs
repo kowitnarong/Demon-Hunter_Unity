@@ -8,7 +8,9 @@ public class EnemyZombie : MonoBehaviour
     [HideInInspector]
     public GameObject Player;
     public GameObject ZombieDied;
-    public float speed = 1.5f;
+    public float speed = 80f;
+    [HideInInspector]
+    public float StartSpeed = 1.5f;
     [HideInInspector]
     public float TempSpeed;
     [HideInInspector]
@@ -47,7 +49,7 @@ public class EnemyZombie : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, 0.5f);
+        InvokeRepeating("UpdatePath", 0f, 0.2f);
     }
 
     void UpdatePath()
@@ -106,7 +108,7 @@ public class EnemyZombie : MonoBehaviour
 
     public void EnemyEvade()
     {
-        transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, -1.5f * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, Player.transform.position, -StartSpeed * Time.deltaTime);
     }
 
     public void EnemyDead()
@@ -156,6 +158,7 @@ public class EnemyZombie : MonoBehaviour
         if (hitInfo.gameObject.name == "Water")
         {
             speed = (float)(speed / 2.5);
+            StartSpeed = (float)(StartSpeed / 2.5);
         }
     }
     public void OnTriggerExit2D(Collider2D hitInfo)
@@ -164,6 +167,7 @@ public class EnemyZombie : MonoBehaviour
         if (hitInfo.gameObject.name == "Water")
         {
             speed = TempSpeed;
+            StartSpeed = 1.5f;
         }
     }
 }
