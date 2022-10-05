@@ -59,6 +59,10 @@ public class SceneChange : MonoBehaviour
         {
             CurrentScene = "GameOver";
         }
+        if (currentScene.name == "BoardDisplay")
+        {
+            CurrentScene = "ScoreBoard";
+        }
     }
     void SetNextScene()
     {
@@ -123,6 +127,7 @@ public class SceneChange : MonoBehaviour
             SceneManager.LoadScene(indexScene);
             SceneManager.LoadScene(NextScene);
             SceneChange.CurrentScene = NextScene;
+            PlayerMovement.EnemyEvade = false;
             AudioManager.ChangeScene = true;
             isChangeScene = false;
         }
@@ -146,6 +151,8 @@ public class SceneChange : MonoBehaviour
         {
             SceneManager.LoadScene(indexScene);
             SceneManager.LoadScene(NextScene);
+            CountZombieDead.Count = 0;
+            PlayerMovement.EnemyEvade = false;
             CurrentScene = RestartScene;
         }
     }
@@ -165,6 +172,13 @@ public class SceneChange : MonoBehaviour
             Bullet.gunMode = "normal";
             Bullet.curItem = "normal";
             PlayerMovement.curCoin = 0;
+            CountZombieDead.Count = 0;
+            PlayerMovement.EnemyEvade = false;
+        }
+        if (Input.GetButton("DataBase") && CurrentScene == "EndGame")
+        {
+            SceneManager.LoadScene(7);
+            SceneManager.LoadScene("BoardDisplay");
         }
     }
 }

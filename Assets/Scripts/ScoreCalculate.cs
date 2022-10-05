@@ -9,6 +9,8 @@ public class ScoreCalculate : MonoBehaviour
     public Text textElementCoin;
     private string textScore;
     public Text textElementScore;
+    private string textZombie;
+    public Text textElementZombie;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,7 @@ public class ScoreCalculate : MonoBehaviour
     void FixedUpdate()
     {
         SetScore();
+        SetZombieCount();
     }
     void SetScore()
     {
@@ -26,5 +29,10 @@ public class ScoreCalculate : MonoBehaviour
         textScore = "TOTAL SCORE : " + (PlayerMovement.curCoin * 100).ToString();
         textElementCoin.text = textCoin;
         textElementScore.text = textScore;
+    }
+    void SetZombieCount()
+    {
+        textZombie = "TOTAL KILLED : " + CountZombieDead.Count.ToString();
+        textElementZombie.text = textZombie;
     }
 }

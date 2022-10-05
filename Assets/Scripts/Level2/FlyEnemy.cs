@@ -74,6 +74,7 @@ public class FlyEnemy : MonoBehaviour
                 }
                 RandomItemGunRate = 99;
             }
+            CountZombieDead.Count += 1;
             Destroy(gameObject);
         }
     }

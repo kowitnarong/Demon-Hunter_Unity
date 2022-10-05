@@ -143,6 +143,7 @@ public class EnemyZombie : MonoBehaviour
                 }
                 RandomItemGunRate = 99;
             }
+            CountZombieDead.Count += 1;
             Destroy(gameObject);
         }
     }

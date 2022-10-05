@@ -165,6 +165,7 @@ public class PlayerMovement : MonoBehaviour
             Bullet.curItem = "normal";
             SceneChange.RestartScene = LevelRestart;
             SceneManager.LoadScene("GameOverDisplay");
+            EnemyEvade = false;
         }
     }
 

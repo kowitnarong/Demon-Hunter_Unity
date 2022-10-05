@@ -21,9 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/StageClear.unity
     guid: 472e5292a2cc4f2448af10c4769a2845
   - enabled: 1
+    path: Assets/Scenes/EndDisplay.unity
+    guid: 63b3b6a1b6818cd42a35b9d74223f65c
+  - enabled: 1
     path: Assets/Scenes/GameOverDisplay.unity
     guid: fc6a963672612d94696517af1a31c41e
   - enabled: 1
-    path: Assets/Scenes/EndDisplay.unity
+    path: Assets/Scenes/BoardDisplay.unity
     guid: 8b6d3becbb2d8b94c8ccfb30510d93e2
   m_configObjects: {}
